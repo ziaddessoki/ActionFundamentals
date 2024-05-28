@@ -11,19 +11,20 @@ on:
   schedule:
     - cron: '15 6 * * 0'
   workflow_dispatch:
+  
 jobs:
-    Build:
-    runs-on: ubuntu-latest
+  Build:
+   runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+   steps:
+     - name: Checkout code
+       uses: actions/checkout@v2
 
-      - name: Output the event name
-        run: echo "Event that triggered the workflow: ${{ github.event_name }}"
+     - name: Output the event name
+       run: echo "Event that triggered the workflow:${{ github.event_name }}"
 
-      - name: Output the current branch
-        run: echo "Current branch: ${{ github.ref_name }}"
+     - name: Output the current branch
+       run: echo "Current branch:${{ github.ref_name }}"
 
-      - name: List all files in the repository
-        run: ls -la
+     - name: List all files in the repository
+       run: ls -la
